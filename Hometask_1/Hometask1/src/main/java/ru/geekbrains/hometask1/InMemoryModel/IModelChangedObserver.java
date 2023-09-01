@@ -1,6 +1,6 @@
 package ru.geekbrains.hometask1.InMemoryModel;
 
-public interface ModelChangedObserver {
+public interface IModelChangedObserver {
     void applyUpdateModel();
 
 }

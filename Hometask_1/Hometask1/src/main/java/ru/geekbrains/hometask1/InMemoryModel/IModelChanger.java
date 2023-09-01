@@ -7,7 +7,7 @@ public interface IModelChanger {
      */
     void notifyChange();
 
-    void RegisterModelChanger(ModelChangedObserver o);
-    void RemoveModelChanger(ModelChangedObserver o);
+    void RegisterModelChanger(IModelChangedObserver o);
+    void RemoveModelChanger(IModelChangedObserver o);
 
 }
