@@ -19,7 +19,7 @@ public class Scene {
         models.add(new PolygonalModel(polygons));
     }
 
-    public void removeModel(Integer index) {
+    public void removeModel(int index) {
         if(index >= 0 && index < models.size()) {
             models.remove(models.get(index));
         }
@@ -29,7 +29,7 @@ public class Scene {
         flashes.add(new Flash(location, angle, color, power));
     }
 
-    public void removeFlash(Integer index) {
+    public void removeFlash(int index) {
         if(index >= 0 && index < flashes.size()) {
             flashes.remove(flashes.get(index));
         }
@@ -54,17 +54,17 @@ public class Scene {
         }
     }
 
-    public void addCamera() {
-        cameras.add(new Camera());
+    public void addCamera(Point3D location, Angle3D angle) {
+        cameras.add(new Camera(location, angle));
     }
 
-    public void removeCamera(Integer index) {
+    public void removeCamera(int index) {
         if(index >= 0 && index < cameras.size()) {
             cameras.remove(cameras.get(index));
         }
     }
 
-    public void editCamera(Integer index, Point3D location, Angle3D angle) {
+    public void editCamera(int index, Point3D location, Angle3D angle) {
         if(index >= 0 && index < cameras.size()) {
             if (location != null) {
                 cameras.get(index).move(location);

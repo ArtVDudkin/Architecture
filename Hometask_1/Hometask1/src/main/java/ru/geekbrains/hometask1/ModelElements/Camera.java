@@ -5,9 +5,6 @@ public class Camera {
     private Point3D location;
     private Angle3D angle;
 
-    public Camera() {
-    }
-
     public Camera(Point3D location, Angle3D angle) {
         this.location = location;
         this.angle = angle;

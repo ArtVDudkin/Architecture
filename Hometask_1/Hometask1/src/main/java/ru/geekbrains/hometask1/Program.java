@@ -19,7 +19,7 @@ public class Program {
         List<Polygon> polygons = new ArrayList<>();
         polygons.add(p1);
         PolygonalModel polygonalModel = new PolygonalModel(polygons);
-        store.add(polygonalModel);
+        store.addModel(polygonalModel);
     }
     
 }
