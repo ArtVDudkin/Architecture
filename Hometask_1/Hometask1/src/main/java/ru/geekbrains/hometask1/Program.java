@@ -2,8 +2,8 @@ package ru.geekbrains.hometask1;
 
 import ru.geekbrains.hometask1.InMemoryModel.ModelStore;
 import ru.geekbrains.hometask1.InMemoryModel.Observer1;
-import ru.geekbrains.hometask1.ModelElements.Poligon;
-import ru.geekbrains.hometask1.ModelElements.PoligonalModel;
+import ru.geekbrains.hometask1.ModelElements.Polygon;
+import ru.geekbrains.hometask1.ModelElements.PolygonalModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ public class Program {
         ModelStore store = new ModelStore();
         store.RegisterModelChanger(observer1);
 
-        Poligon p1 = new Poligon();
-        List<Poligon> poligons = new ArrayList<>();
-        poligons.add(p1);
-        PoligonalModel poligonalModel = new PoligonalModel(poligons);
-        store.add(poligonalModel);
+        Polygon p1 = new Polygon();
+        List<Polygon> polygons = new ArrayList<>();
+        polygons.add(p1);
+        PolygonalModel polygonalModel = new PolygonalModel(polygons);
+        store.add(polygonalModel);
     }
     
 }

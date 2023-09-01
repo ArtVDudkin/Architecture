@@ -2,7 +2,7 @@ package ru.geekbrains.hometask1.InMemoryModel;
 
 import ru.geekbrains.hometask1.ModelElements.Camera;
 import ru.geekbrains.hometask1.ModelElements.Flash;
-import ru.geekbrains.hometask1.ModelElements.PoligonalModel;
+import ru.geekbrains.hometask1.ModelElements.PolygonalModel;
 import ru.geekbrains.hometask1.ModelElements.Scene;
 
 import java.util.ArrayList;
@@ -12,12 +12,12 @@ public class ModelStore implements IModelChanger {
 
     private List<ModelChangedObserver> observers = new ArrayList<>();
 
-    private List<PoligonalModel> models = new ArrayList<>();
+    private List<PolygonalModel> models = new ArrayList<>();
     private List<Flash> flashes = new ArrayList<>();
     private List<Scene> scenes = new ArrayList<>();
     private List<Camera> cameras = new ArrayList<>();
 
-    public void add(PoligonalModel model){
+    public void add(PolygonalModel model){
         models.add(model);
         notifyChange();
     }
