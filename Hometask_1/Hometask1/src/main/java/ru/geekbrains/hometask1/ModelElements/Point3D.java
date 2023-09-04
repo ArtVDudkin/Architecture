@@ -2,6 +2,9 @@ package ru.geekbrains.hometask1.ModelElements;
 
 public class Point3D {
 
+    /**
+     * Задаем точку в 3D пространстве по трем координатам x, y и z
+     */
     private double x, y, z;
 
     public double getX() {

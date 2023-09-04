@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class Scene {
 
+    /**
+     * Задаем сцену как список полигональных моделей, источников света и камер
+     */
     private List<PolygonalModel> models;
     private List<Flash> flashes;
     private List<Camera> cameras;
@@ -20,7 +23,7 @@ public class Scene {
     }
 
     public void removeModel(int index) {
-        if(index >= 0 && index < models.size()) {
+        if (index >= 0 && index < models.size()) {
             models.remove(models.get(index));
         }
     }
@@ -30,13 +33,13 @@ public class Scene {
     }
 
     public void removeFlash(int index) {
-        if(index >= 0 && index < flashes.size()) {
+        if (index >= 0 && index < flashes.size()) {
             flashes.remove(flashes.get(index));
         }
     }
 
     public void editFlash(Integer index, Point3D location, Angle3D angle, Color color, Float power) {
-        if(index >= 0 && index < flashes.size()) {
+        if (index >= 0 && index < flashes.size()) {
             if (location != null) {
                 flashes.get(index).move(location);
             }
@@ -59,13 +62,13 @@ public class Scene {
     }
 
     public void removeCamera(int index) {
-        if(index >= 0 && index < cameras.size()) {
+        if (index >= 0 && index < cameras.size()) {
             cameras.remove(cameras.get(index));
         }
     }
 
     public void editCamera(int index, Point3D location, Angle3D angle) {
-        if(index >= 0 && index < cameras.size()) {
+        if (index >= 0 && index < cameras.size()) {
             if (location != null) {
                 cameras.get(index).move(location);
             }

@@ -2,6 +2,12 @@ package ru.geekbrains.hometask1.ModelElements;
 
 public class Flash {
 
+    /**
+     * Point3D location - точка размещения источника света в 3D пространстве
+     * Angle3D angle - угол поворота/наклона источника света в 3D пространстве
+     * Color color - цвет источника света
+     * Float power - мощность источника света
+     */
     private Point3D location;
     private Angle3D angle;
     private Color color;
@@ -14,7 +20,7 @@ public class Flash {
         this.power = power;
     }
 
-    public Point3D getLocation(){
+    public Point3D getLocation() {
         return this.location;
     }
 

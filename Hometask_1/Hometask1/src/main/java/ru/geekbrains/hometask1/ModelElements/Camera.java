@@ -2,6 +2,10 @@ package ru.geekbrains.hometask1.ModelElements;
 
 public class Camera {
 
+    /**
+     * Point3D location - точка размещения камеры в 3D пространстве
+     * Angle3D angle - угол поворота/наклона камеры в 3D пространстве
+     */
     private Point3D location;
     private Angle3D angle;
 
@@ -10,7 +14,7 @@ public class Camera {
         this.angle = angle;
     }
 
-    public Point3D getLocation(){
+    public Point3D getLocation() {
         return this.location;
     }
 

@@ -2,6 +2,12 @@ package ru.geekbrains.hometask1.ModelElements;
 
 public class Color {
 
+    /**
+     * Задаем цвет истоничка света по RGB модели
+     * int r - red
+     * int g - green
+     * int b - blue
+     */
     private int r;
     private int g;
     private int b;

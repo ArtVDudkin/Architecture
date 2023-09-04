@@ -2,6 +2,10 @@ package ru.geekbrains.hometask1.ModelElements;
 
 public class Texture {
 
+    /**
+     * String name - название текстуры
+     * String url - ссылка на изображение текстуры
+     */
     private String name;
     private String url;
 
@@ -13,6 +17,7 @@ public class Texture {
     public String getName() {
         return name;
     }
+
     public void editName(String name) {
         this.name = name;
     }

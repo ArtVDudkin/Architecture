@@ -4,6 +4,9 @@ import java.util.List;
 
 public class PolygonalModel {
 
+    /**
+     * Задаем полигональную модель как список многоугольников и текстур
+     */
     private List<Polygon> polygons;
     private List<Texture> textures;
 

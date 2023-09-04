@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Polygon {
 
+    /**
+     * Задаем многоугольник как список точек в 3D пространстве
+     */
     private List<Point3D> points;
 
     public Polygon(List<Point3D> points) {
