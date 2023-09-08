@@ -20,7 +20,7 @@ public class Truck extends Car implements IFuelable, IWash {
 
     @Override
     public void maintenance() {
-
+        System.out.println("Техобслуживание автомобиля выполнено");
     }
 
     @Override

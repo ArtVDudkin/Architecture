@@ -13,12 +13,12 @@ public class Sedan extends Car implements IFuelable, IWash {
     }
     @Override
     public void move() {
-
+        System.out.println("Седан начал резво набирать скорость");
     }
 
     @Override
     public void maintenance() {
-
+        System.out.println("Техобслуживание автомобиля выполнено");
     }
 
     @Override
@@ -49,8 +49,6 @@ public class Sedan extends Car implements IFuelable, IWash {
     public void setRefuelingStation(IRefuelable refuelingStation) {
         this.refueling = refuelingStation;
     }
-
-
 
     /**
      * Заправить автомобиль

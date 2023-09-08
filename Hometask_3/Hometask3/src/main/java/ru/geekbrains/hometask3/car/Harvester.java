@@ -18,7 +18,7 @@ public class Harvester extends Car implements IFuelable, IWash {
 
     @Override
     public void maintenance() {
-
+        System.out.println("Техобслуживание автомобиля выполнено");
     }
 
     @Override
@@ -51,8 +51,6 @@ public class Harvester extends Car implements IFuelable, IWash {
         this.refueling = refuelingStation;
     }
 
-
-
     /**
      * Заправить автомобиль
      */
@@ -68,6 +66,10 @@ public class Harvester extends Car implements IFuelable, IWash {
         if (carWash != null){
             carWash.chooseComplex(complex);
         }
+    }
+
+    public void sweeping() {
+        System.out.println("Автомобиль метет улицу.");
     }
 
 }

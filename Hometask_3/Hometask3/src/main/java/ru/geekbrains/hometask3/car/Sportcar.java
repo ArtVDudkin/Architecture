@@ -50,8 +50,6 @@ public class Sportcar extends Car implements IFuelable, IWash {
         this.refueling = refuelingStation;
     }
 
-
-
     /**
      * Заправить автомобиль
      */

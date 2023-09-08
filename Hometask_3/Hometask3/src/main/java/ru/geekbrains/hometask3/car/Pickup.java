@@ -13,12 +13,12 @@ public class Pickup extends Car implements IFuelable, IWash {
     }
     @Override
     public void move() {
-
+        System.out.println("Пикап начал движение по бездорожью");
     }
 
     @Override
     public void maintenance() {
-
+        System.out.println("Техобслуживание автомобиля выполнено");
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Pickup extends Car implements IFuelable, IWash {
 
     @Override
     public void getFuel() {
-        if (refueling != null){
+        if (refueling != null) {
             refueling.fuel(fuelType);
         }
     }
@@ -59,4 +59,5 @@ public class Pickup extends Car implements IFuelable, IWash {
     public void setCarWash(CarWash carWash) {
         this.carWash = carWash;
     }
+
 }
