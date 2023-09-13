@@ -28,6 +28,9 @@ public class Ticket {
         return this.customerId;
     }
 
+    public void setCustomerId(int clientId) {
+        this.customerId = clientId;
+    }
     public Date getDate() {
         return this.date;
     }

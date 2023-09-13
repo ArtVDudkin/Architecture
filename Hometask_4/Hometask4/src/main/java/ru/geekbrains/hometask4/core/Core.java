@@ -7,7 +7,7 @@ public class Core {
     private final PaymentProvider paymentProvider;
     private final Database database;
 
-    public Core(){
+    public Core() {
         database = new Database();
         customerProvider = new CustomerProvider(database);
         paymentProvider = new PaymentProvider();

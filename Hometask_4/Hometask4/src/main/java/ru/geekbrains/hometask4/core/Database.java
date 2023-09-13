@@ -12,6 +12,8 @@ public class Database {
     private Collection<Ticket> tickets = new ArrayList<>();
     private Collection<Customer> customers = new ArrayList<>();
 
+    private double amount = 45;
+
     public Database() {
         tickets.add(new Ticket());
         tickets.add(new Ticket());
@@ -19,12 +21,20 @@ public class Database {
     }
 
     public Collection<Ticket> getTickets() {
-
         return tickets;
+    }
+
+    public void addTicket(Ticket ticket) {
+        tickets.add(ticket);
     }
 
     public Collection<Customer> getCustomers() {
         return customers;
+    }
+
+    public void addCustomer(Customer customer, Ticket ticket) {
+        customers.add(customer);
+        ticket.setCustomerId(customer.getId());
     }
 
     /**
@@ -32,7 +42,7 @@ public class Database {
      * @return
      */
     public double getTicketAmount() {
-        return 45;
+        return amount;
     }
 
     /**

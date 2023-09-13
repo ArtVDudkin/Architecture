@@ -25,6 +25,10 @@ public class Customer {
         this.tickets = tickets;
     }
 
+    public void addTicket(Ticket ticket) {
+        this.tickets.add(ticket);
+    }
+
     public int getId() {
         return id;
     }

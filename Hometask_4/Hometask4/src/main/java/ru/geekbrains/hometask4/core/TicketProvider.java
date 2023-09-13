@@ -22,7 +22,6 @@ public class TicketProvider {
                 tickets.add(ticket);
         }
         return tickets;
-
     }
 
     public boolean buyTicket(int clientId, String cardNo) {
@@ -55,7 +54,7 @@ public class TicketProvider {
             // если оплата не прошла, откатываем назад транзацию и билет снова доступен к покупке
             // paymentProvider.rollback(orderId,  cardNo, amount);
         }
-
+        database.addCustomer(new Customer(), new Ticket());
         //TODO: Возвращаем результат выполнения задачи ...
         return true;
     }
