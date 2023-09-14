@@ -35,8 +35,16 @@ public class Ticket {
         return this.date;
     }
 
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public String getQrcode() {
         return this.qrcode;
+    }
+
+    public void setQrcode(String qrcode) {
+        this.qrcode = qrcode;
     }
 
     public boolean isEnable() {

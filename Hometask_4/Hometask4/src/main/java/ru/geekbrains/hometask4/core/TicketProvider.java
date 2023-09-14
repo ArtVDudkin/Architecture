@@ -18,7 +18,7 @@ public class TicketProvider {
 
         Collection<Ticket> tickets = new ArrayList<>();
         for (Ticket ticket: database.getTickets()) {
-            if (ticket.getCustomerId() == clientId && ticket.getDate().equals(date))
+            if (ticket.getCustomerId() == clientId) // && ticket.getDate().equals(date))
                 tickets.add(ticket);
         }
         return tickets;
@@ -55,6 +55,7 @@ public class TicketProvider {
             // paymentProvider.rollback(orderId,  cardNo, amount);
         }
         Ticket ticket = new Ticket();
+        ticket.setQrcode(Integer.toString(clientId));
         database.addTicket(ticket);
         database.addCustomer(database.getCustomerByID(clientId), ticket);
         database.getCustomerByID(clientId).addTicket(ticket);
