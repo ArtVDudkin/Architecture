@@ -54,7 +54,11 @@ public class TicketProvider {
             // если оплата не прошла, откатываем назад транзацию и билет снова доступен к покупке
             // paymentProvider.rollback(orderId,  cardNo, amount);
         }
-        database.addCustomer(new Customer(), new Ticket());
+        Ticket ticket = new Ticket();
+        database.addCustomer(database.getCustomerByID(clientId), ticket);
+        System.out.println(database.getCustomerByID(clientId));
+        database.getCustomerByID(clientId).addTicket(ticket);
+
         //TODO: Возвращаем результат выполнения задачи ...
         return true;
     }

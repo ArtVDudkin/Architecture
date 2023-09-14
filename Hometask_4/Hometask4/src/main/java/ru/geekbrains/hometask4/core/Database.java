@@ -18,6 +18,7 @@ public class Database {
         tickets.add(new Ticket());
         tickets.add(new Ticket());
         tickets.add(new Ticket());
+        customers.add(new Customer());
     }
 
     public Collection<Ticket> getTickets() {
@@ -35,6 +36,15 @@ public class Database {
     public void addCustomer(Customer customer, Ticket ticket) {
         customers.add(customer);
         ticket.setCustomerId(customer.getId());
+    }
+
+    public Customer getCustomerByID (int clientId) {
+        for (Customer customer : customers) {
+            if (customer.getId() == clientId) {
+                return customer;
+            }
+        }
+        return null;
     }
 
     /**
