@@ -66,7 +66,7 @@ public class TicketProvider {
 
     public boolean checkTicket(String qrcode) {
         for (Ticket ticket : database.getTickets()) {
-            if (ticket.getQrcode() == qrcode) {
+            if (ticket.getQrcode() != null && ticket.getQrcode().equals(qrcode)) {
                 ticket.setEnable(false);
                 // Save database ...
                 return true;
