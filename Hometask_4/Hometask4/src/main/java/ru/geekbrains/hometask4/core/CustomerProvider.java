@@ -8,8 +8,10 @@ public class CustomerProvider {
         this.database = database;
     }
 
-    public Customer getCustomer(String login, String password){
-        return new Customer();
+    public Customer getCustomer(String login, String password) {
+        Customer customer = new Customer();
+        database.addCustomer(customer, new Ticket());
+        return customer;
     }
 
 }

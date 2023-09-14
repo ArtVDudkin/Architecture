@@ -1,5 +1,6 @@
 package ru.geekbrains.hometask4.core;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -11,7 +12,7 @@ public class Customer {
 
     private final int id;
 
-    private Collection<Ticket> tickets;
+    private Collection<Ticket> tickets = new ArrayList<>();
 
     {
         id = ++counter;

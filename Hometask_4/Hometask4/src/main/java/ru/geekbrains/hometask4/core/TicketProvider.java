@@ -55,8 +55,8 @@ public class TicketProvider {
             // paymentProvider.rollback(orderId,  cardNo, amount);
         }
         Ticket ticket = new Ticket();
+        database.addTicket(ticket);
         database.addCustomer(database.getCustomerByID(clientId), ticket);
-        System.out.println(database.getCustomerByID(clientId));
         database.getCustomerByID(clientId).addTicket(ticket);
 
         //TODO: Возвращаем результат выполнения задачи ...
