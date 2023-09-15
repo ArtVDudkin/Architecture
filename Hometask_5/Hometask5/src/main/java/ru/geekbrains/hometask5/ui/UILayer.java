@@ -27,4 +27,6 @@ public interface UILayer {
 
     void deleteModel(int modelNo);
 
+    void addTextureToModel(int modelNo, int textureNo);
+
 }

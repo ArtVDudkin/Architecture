@@ -167,4 +167,20 @@ public class Editor3D implements UILayer {
         System.out.println("Модель успешно удалена");
     }
 
+    @Override
+    public void addTextureToModel(int modelNo, int textureNo) {
+
+        // Предусловие
+        checkProjectFile();
+
+        List<Model3D> models = (ArrayList<Model3D>) businessLogicalLayer.getAllModels();
+        if (modelNo < 0 || modelNo > models.size() - 1)
+            throw new RuntimeException("Номер модели указан некорректно.");
+        List<Texture> textures = (ArrayList<Texture>) businessLogicalLayer.getAllTextures();
+        if (textureNo < 0 || textureNo > textures.size() - 1)
+            throw new RuntimeException("Номер текстуры указан некорректно.");
+        businessLogicalLayer.editModel(models.get(modelNo), textures.get(textureNo));
+        System.out.println("Текстура успешно добавлена к модели");
+    }
+
 }

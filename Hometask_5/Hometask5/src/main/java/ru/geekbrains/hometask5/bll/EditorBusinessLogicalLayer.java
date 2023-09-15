@@ -40,14 +40,14 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
     }
 
     @Override
-    public void removeTexture(Texture texture) {
-        databaseAccess.removeEntity(texture);
-    }
-
-    @Override
     public void createTexture() {
         Texture texture = new Texture();
         databaseAccess.addEntity(texture);
+    }
+
+    @Override
+    public void removeTexture(Texture texture) {
+        databaseAccess.removeEntity(texture);
     }
 
     @Override
@@ -59,6 +59,11 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
     @Override
     public void removeModel(Model3D model) {
         databaseAccess.removeEntity(model);
+    }
+
+    @Override
+    public void editModel(Model3D model, Texture texture) {
+        databaseAccess.addTextureTo(model, texture);
     }
 
     private Random random = new Random();

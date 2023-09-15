@@ -26,4 +26,6 @@ public interface BusinessLogicalLayer {
 
     void removeModel(Model3D model);
 
+    void editModel(Model3D model, Texture texture);
+
 }

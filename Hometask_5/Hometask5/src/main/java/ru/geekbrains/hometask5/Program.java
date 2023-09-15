@@ -91,7 +91,22 @@ public class Program {
 
                         // Добавить к модели текстуру
                         case 42:
-                            //editor3D.renderAll();
+                            System.out.print("Укажите номер модели, к которой Вы хотите добавить текстуру: ");
+                            if (scanner.hasNextInt()) {
+                                int modelNo = scanner.nextInt();
+                                int textureNo = -1;
+                                scanner.nextLine();
+                                System.out.print("Укажите номер текстуры, которую Вы хотите добавить к модели: ");
+                                if (scanner.hasNextInt()) {
+                                    textureNo = scanner.nextInt();
+                                    scanner.nextLine();
+                                } else {
+                                    System.out.println("Номер модели указан некорректно.");
+                                }
+                                editor3D.addTextureToModel(modelNo, textureNo);
+                            } else {
+                                System.out.println("Номер модели указан некорректно.");
+                            }
                             break;
 
                         // Удалить текстуру из модели

@@ -37,12 +37,8 @@ public class Model3D implements Entity {
         this.textures.add(texture);
     }
 
-    public void removeTexture(int textureId) {
-        for (Texture texture : textures) {
-            if (texture.getId() == textureId) {
-                textures.remove(texture);
-            }
-        }
+    public void removeTexture(Texture texture) {
+        this.textures.remove(texture);
     }
 
     @Override
