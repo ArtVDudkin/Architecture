@@ -1,8 +1,8 @@
 package ru.geekbrains.hometask5.dac;
 
-import ru.geekbrains.hometask5.database.Entity;
-import ru.geekbrains.hometask5.database.Model3D;
-import ru.geekbrains.hometask5.database.Texture;
+import ru.geekbrains.hometask5.entity.Entity;
+import ru.geekbrains.hometask5.entity.Model3D;
+import ru.geekbrains.hometask5.entity.Texture;
 
 import java.util.Collection;
 

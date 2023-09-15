@@ -9,8 +9,8 @@ public class Program {
     public static void main(String[] args) {
 
         Editor3D editor3D = new Editor3D();
-        boolean f = true;
-        while (f) {
+        boolean flag = true;
+        while (flag) {
             System.out.println("*** МОЙ 3D РЕДАКТОР ***");
             System.out.println("=======================");
             System.out.println("1. Открыть проект");
@@ -23,13 +23,13 @@ public class Program {
             System.out.println("0. ЗАВЕРШЕНИЕ РАБОТЫ ПРИЛОЖЕНИЯ");
             System.out.print("Пожалуйста, выберите пункт меню: ");
             if (scanner.hasNextInt()) {
-                int no = scanner.nextInt();
+                int answer = scanner.nextInt();
                 scanner.nextLine();
                 try {
-                    switch (no) {
+                    switch (answer) {
                         case 0:
                             System.out.println("Завершение работы приложения");
-                            f = false;
+                            flag = false;
                             break;
                         case 1:
                             System.out.print("Укажите наименование файла проекта: ");

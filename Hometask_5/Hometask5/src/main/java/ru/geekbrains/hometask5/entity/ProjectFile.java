@@ -1,4 +1,4 @@
-package ru.geekbrains.hometask5.database;
+package ru.geekbrains.hometask5.entity;
 
 /**
  * Файл проекта

@@ -1,8 +1,8 @@
 package ru.geekbrains.hometask5.bll;
 
 import ru.geekbrains.hometask5.dac.DatabaseAccess;
-import ru.geekbrains.hometask5.database.Model3D;
-import ru.geekbrains.hometask5.database.Texture;
+import ru.geekbrains.hometask5.entity.Model3D;
+import ru.geekbrains.hometask5.entity.Texture;
 
 import java.util.Collection;
 import java.util.Random;

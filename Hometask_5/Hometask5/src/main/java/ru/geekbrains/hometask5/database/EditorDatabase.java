@@ -1,5 +1,10 @@
 package ru.geekbrains.hometask5.database;
 
+import ru.geekbrains.hometask5.entity.Entity;
+import ru.geekbrains.hometask5.entity.Model3D;
+import ru.geekbrains.hometask5.entity.ProjectFile;
+import ru.geekbrains.hometask5.entity.Texture;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;
@@ -37,6 +42,16 @@ public class EditorDatabase implements Database {
             }
         }
         return entities;
+    }
+
+    @Override
+    public void addEntity(Entity entity) {
+        entities.add(entity);
+    }
+
+    @Override
+    public void removeEntity(Entity entity) {
+        entities.remove(entity);
     }
 
     private void generateModelAndTextures() {

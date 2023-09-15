@@ -1,5 +1,7 @@
 package ru.geekbrains.hometask5.database;
 
+import ru.geekbrains.hometask5.entity.Entity;
+
 import java.util.Collection;
 
 /**
@@ -12,5 +14,9 @@ public interface Database {
     void save();
 
     Collection<Entity> getAll();
+
+    void addEntity(Entity entity);
+
+    void removeEntity(Entity entity);
 
 }

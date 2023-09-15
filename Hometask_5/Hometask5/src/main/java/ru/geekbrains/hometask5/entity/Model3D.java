@@ -1,4 +1,4 @@
-package ru.geekbrains.hometask5.database;
+package ru.geekbrains.hometask5.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,6 +31,18 @@ public class Model3D implements Entity {
 
     public Collection<Texture> getTextures() {
         return textures;
+    }
+
+    public void addTexture(Texture texture) {
+        this.textures.add(texture);
+    }
+
+    public void removeTexture(int textureId) {
+        for (Texture texture : textures) {
+            if (texture.getId() == textureId) {
+                textures.remove(texture);
+            }
+        }
     }
 
     @Override

@@ -3,6 +3,9 @@ package ru.geekbrains.hometask5.ui;
 import ru.geekbrains.hometask5.bll.*;
 import ru.geekbrains.hometask5.dac.*;
 import ru.geekbrains.hometask5.database.*;
+import ru.geekbrains.hometask5.entity.Model3D;
+import ru.geekbrains.hometask5.entity.ProjectFile;
+import ru.geekbrains.hometask5.entity.Texture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +86,7 @@ public class Editor3D implements UILayer {
         // Предусловие
         checkProjectFile();
 
-        ArrayList<Texture> textures = (ArrayList<Texture>) businessLogicalLayer.getAllTextures();
+       List<Texture> textures = (ArrayList<Texture>) businessLogicalLayer.getAllTextures();
         for (int i = 0; i < textures.size(); i++) {
             System.out.printf("===%d===\n", i);
             System.out.println(textures.get(i));
@@ -103,17 +106,17 @@ public class Editor3D implements UILayer {
     }
 
     @Override
-    public void renderModel(int i) {
+    public void renderModel(int modelId) {
 
         // Предусловие
         checkProjectFile();
 
-        ArrayList<Model3D> models = (ArrayList<Model3D>) businessLogicalLayer.getAllModels();
-        if (i < 0 || i > models.size() - 1)
+        List<Model3D> models = (ArrayList<Model3D>) businessLogicalLayer.getAllModels();
+        if (modelId < 0 || modelId > models.size() - 1)
             throw new RuntimeException("Номер модели указан некорректною.");
         System.out.println("Подождите ...");
         long startTime = System.currentTimeMillis();
-        businessLogicalLayer.renderModel(models.get(i));
+        businessLogicalLayer.renderModel(models.get(modelId));
         long endTime = (System.currentTimeMillis() - startTime);
         System.out.printf("Операция выполнена за %d мс.\n", endTime);
     }
