@@ -17,6 +17,8 @@ public interface DatabaseAccess {
 
     void addTextureTo(Model3D model3D, Texture texture);
 
+    void delTextureFrom(Model3D model3D, Texture texture);
+
     Collection<Texture> getAllTextures();
 
     Collection<Model3D> getAllModels();

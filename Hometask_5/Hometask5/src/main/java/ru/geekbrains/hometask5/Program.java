@@ -111,7 +111,22 @@ public class Program {
 
                         // Удалить текстуру из модели
                         case 43:
-                            //editor3D.renderAll();
+                            System.out.print("Укажите номер модели, из которой Вы хотите удалить текстуру: ");
+                            if (scanner.hasNextInt()) {
+                                int modelNo = scanner.nextInt();
+                                int textureNo = -1;
+                                scanner.nextLine();
+                                System.out.print("Укажите номер текстуры, которую Вы хотите удалить из модели: ");
+                                if (scanner.hasNextInt()) {
+                                    textureNo = scanner.nextInt();
+                                    scanner.nextLine();
+                                } else {
+                                    System.out.println("Номер модели указан некорректно.");
+                                }
+                                editor3D.removeTextureFromModel(modelNo, textureNo);
+                            } else {
+                                System.out.println("Номер модели указан некорректно.");
+                            }
                             break;
 
                         // Удалить модель

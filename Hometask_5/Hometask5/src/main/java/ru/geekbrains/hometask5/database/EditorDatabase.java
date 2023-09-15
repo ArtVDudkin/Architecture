@@ -59,6 +59,11 @@ public class EditorDatabase implements Database {
         model.getTextures().add(texture);
     }
 
+    @Override
+    public void removeTextureFromModel(Model3D model, Texture texture) {
+        model.getTextures().remove(texture);
+    }
+
     private void generateModelAndTextures() {
         Model3D model3D = new Model3D();
         int txCount = random.nextInt(3);

@@ -56,4 +56,9 @@ public class EditorDatabaseAccess implements DatabaseAccess {
         editorDatabase.addTextureToModel(model3D, texture);
     }
 
+    @Override
+    public void delTextureFrom(Model3D model3D, Texture texture) {
+        editorDatabase.removeTextureFromModel(model3D, texture);
+    }
+
 }

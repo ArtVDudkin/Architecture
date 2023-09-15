@@ -62,8 +62,13 @@ public class EditorBusinessLogicalLayer implements BusinessLogicalLayer {
     }
 
     @Override
-    public void editModel(Model3D model, Texture texture) {
+    public void addToModel(Model3D model, Texture texture) {
         databaseAccess.addTextureTo(model, texture);
+    }
+
+    @Override
+    public void delFromModel(Model3D model, Texture texture) {
+        databaseAccess.delTextureFrom(model, texture);
     }
 
     private Random random = new Random();

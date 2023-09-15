@@ -23,4 +23,6 @@ public interface Database {
 
     void addTextureToModel(Model3D model, Texture texture);
 
+    void removeTextureFromModel(Model3D model, Texture texture);
+
 }
