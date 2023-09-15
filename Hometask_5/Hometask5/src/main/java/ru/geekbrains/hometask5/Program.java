@@ -106,7 +106,7 @@ public class Program {
 
                         // Создать новую текстуру
                         case 51:
-                            //editor3D.renderAll();
+                            editor3D.createTexture();
                             break;
 
                         // Удалить текстуру из проекта

@@ -21,4 +21,6 @@ public interface UILayer {
 
     void deleteTexture(int textureNo);
 
+    void createTexture();
+
 }

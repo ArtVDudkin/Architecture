@@ -134,4 +134,15 @@ public class Editor3D implements UILayer {
         System.out.println("Текстура успешно удалена");
     }
 
+    @Override
+    public void createTexture() {
+
+        // Предусловие
+        checkProjectFile();
+
+        businessLogicalLayer.createTexture();
+        System.out.println("Создана новая текстура");
+
+    }
+
 }

@@ -20,4 +20,6 @@ public interface BusinessLogicalLayer {
 
     void removeTexture(Texture texture);
 
+    void createTexture();
+
 }
