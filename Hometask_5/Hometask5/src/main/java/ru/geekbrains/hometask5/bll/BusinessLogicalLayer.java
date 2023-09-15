@@ -18,4 +18,6 @@ public interface BusinessLogicalLayer {
 
     void renderAllModels();
 
+    void removeTexture(Texture texture);
+
 }

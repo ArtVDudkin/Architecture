@@ -113,12 +113,25 @@ public class Editor3D implements UILayer {
 
         List<Model3D> models = (ArrayList<Model3D>) businessLogicalLayer.getAllModels();
         if (modelId < 0 || modelId > models.size() - 1)
-            throw new RuntimeException("Номер модели указан некорректною.");
+            throw new RuntimeException("Номер модели указан некорректно.");
         System.out.println("Подождите ...");
         long startTime = System.currentTimeMillis();
         businessLogicalLayer.renderModel(models.get(modelId));
         long endTime = (System.currentTimeMillis() - startTime);
         System.out.printf("Операция выполнена за %d мс.\n", endTime);
+    }
+
+    @Override
+    public void deleteTexture(int textureNo) {
+
+        // Предусловие
+        checkProjectFile();
+
+        List<Texture> textures = (ArrayList<Texture>) businessLogicalLayer.getAllTextures();
+        if (textureNo < 0 || textureNo > textures.size() - 1)
+            throw new RuntimeException("Номер текстуры указан некорректно.");
+        businessLogicalLayer.removeTexture(textures.get(textureNo));
+        System.out.println("Текстура успешно удалена");
     }
 
 }
