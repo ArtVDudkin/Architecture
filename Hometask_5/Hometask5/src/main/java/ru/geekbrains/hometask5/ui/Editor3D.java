@@ -142,7 +142,29 @@ public class Editor3D implements UILayer {
 
         businessLogicalLayer.createTexture();
         System.out.println("Создана новая текстура");
+    }
 
+    @Override
+    public void createModel() {
+
+        // Предусловие
+        checkProjectFile();
+
+        businessLogicalLayer.createModel();
+        System.out.println("Создана новая модель");
+    }
+
+    @Override
+    public void deleteModel(int modelNo) {
+
+        // Предусловие
+        checkProjectFile();
+
+        List<Model3D> models = (ArrayList<Model3D>) businessLogicalLayer.getAllModels();
+        if (modelNo < 0 || modelNo > models.size() - 1)
+            throw new RuntimeException("Номер модели указан некорректно.");
+        businessLogicalLayer.removeModel(models.get(modelNo));
+        System.out.println("Модель успешно удалена");
     }
 
 }

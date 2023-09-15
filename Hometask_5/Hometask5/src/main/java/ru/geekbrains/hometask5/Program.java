@@ -86,7 +86,7 @@ public class Program {
 
                         // Создать новую модель
                         case 41:
-                            //editor3D.renderAll();
+                            editor3D.createModel();
                             break;
 
                         // Добавить к модели текстуру
@@ -101,7 +101,14 @@ public class Program {
 
                         // Удалить модель
                         case 44:
-                            //editor3D.renderAll();
+                            System.out.print("Укажите номер модели: ");
+                            if (scanner.hasNextInt()) {
+                                int modelNo = scanner.nextInt();
+                                scanner.nextLine();
+                                editor3D.deleteModel(modelNo);
+                            } else {
+                                System.out.println("Номер модели указан некорректно.");
+                            }
                             break;
 
                         // Создать новую текстуру

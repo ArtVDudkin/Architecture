@@ -19,8 +19,12 @@ public interface UILayer {
 
     void renderModel(int modelId);
 
+    void createTexture();
+
     void deleteTexture(int textureNo);
 
-    void createTexture();
+    void createModel();
+
+    void deleteModel(int modelNo);
 
 }
