@@ -35,4 +35,5 @@ public class NotesDbContext extends DbContext implements INotesDatabaseContext {
     protected void onModelCreating(ModelBuilder builder) {
         builder.applyConfiguration(new NoteConfiguration());
     }
+
 }

@@ -12,6 +12,7 @@ public abstract class DbContext {
 
     public boolean saveChanges(){
         //TODO: Сохранение изменений в БД
+
         return true;
     }
 

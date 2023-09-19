@@ -4,6 +4,16 @@ import java.util.Date;
 
 public class NotesRecord {
 
+    private int id;
+    private int userId;
+
+    private String title;
+
+    private String details;
+
+    private Date creationDate;
+    private Date editDate;
+
     private static int counter = 1000;
 
     {
@@ -51,15 +61,5 @@ public class NotesRecord {
     public Date getEditDate() {
         return editDate;
     }
-
-    private int id;
-    private int userId;
-
-    private String title;
-
-    private String details;
-
-    private Date creationDate;
-    private Date editDate;
 
 }
