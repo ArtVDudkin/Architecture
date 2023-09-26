@@ -58,7 +58,7 @@ public class TableModel implements Model {
         for (Reservation reservation : user.getReservations()) {
             if (reservation.getId() == oldReservation) {
                 user.getReservations().remove(reservation);
-                return oldReservation;
+                return -1*oldReservation;
             }
         }
         throw new RuntimeException("Ошибка отмены бронирования столика. Повторите попытку позже.");

@@ -33,8 +33,8 @@ public class BookingView implements View {
     public void showReservationTableResult(int reservationNo) {
         if (reservationNo > 0) {
             System.out.printf("Столик успешно забронирован. Номер вашей брони: #%d\n", reservationNo);
-        } else if (reservationNo == 0) {
-            System.out.printf("Бронирование #%d успешно отменено.\n", reservationNo);
+        } else if (reservationNo < -1) {
+            System.out.printf("Бронирование #%d успешно отменено.\n", -1*reservationNo);
         } else {
             System.out.println("Что-то пошло не так, попробуйте повторить попытку позже.");
         }

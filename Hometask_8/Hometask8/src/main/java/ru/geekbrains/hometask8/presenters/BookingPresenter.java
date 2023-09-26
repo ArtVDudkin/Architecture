@@ -31,7 +31,7 @@ public class BookingPresenter implements ViewObserver {
         view.showTables(loadTables());
     }
 
-    public void updateUIShowReservationTableResult(int reservationNo){
+    public void updateUIShowReservationTableResult(int reservationNo) {
         view.showReservationTableResult(reservationNo);
     }
 
