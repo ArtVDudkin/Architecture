@@ -72,8 +72,15 @@ public class TableModel implements Model {
      * @param name новое имя посетителя
      * @return код успешного выполнения операции, либо код ошибки
      */
-    public int changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
-        return -1;
+    public int changeReservationTable(User user, int oldReservation, Date reservationDate, int tableNo, String name) {
+        for (Reservation reservation : user.getReservations()) {
+            if (reservation.getId() == oldReservation) {
+                reservation.setReservationDate(reservationDate);
+                reservation.setName(name);
+                return oldReservation;
+            }
+        }
+        throw new RuntimeException("Ошибка изменения бронирования столика. Повторите попытку позже.");
     }
 
 }

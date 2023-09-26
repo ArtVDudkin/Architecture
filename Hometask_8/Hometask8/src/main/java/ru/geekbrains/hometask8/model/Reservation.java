@@ -26,6 +26,14 @@ public class Reservation {
         return id;
     }
 
+    public void setReservationDate(Date date) {
+        this.date = date;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return String.format(Locale.getDefault(), "Бронирование #%d", id);
