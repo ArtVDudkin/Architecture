@@ -12,6 +12,6 @@ public interface Model {
 
     int reservationTable(User user, Date reservationDate, int tableNo, String name);
 
-    int closeReservationTable(int oldReservation);
+    int closeReservationTable(User user, int oldReservation);
 
 }

@@ -5,7 +5,6 @@ import ru.geekbrains.hometask8.presenters.Model;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 public class TableModel implements Model {
 
@@ -51,19 +50,16 @@ public class TableModel implements Model {
     /**
      * Отмена бронирования столика
      *
+     * @param user
      * @param oldReservation id бронирования, которое нужно отменить
      */
     @Override
-    public int closeReservationTable(int oldReservation) {
-        for (Table table : tables) {
-            //System.out.println(table.getReservations().stream().findFirst().get().getId());
-            //if (table.getReservations().stream().findFirst().get().getId() == oldReservation) {
-//                Reservation reservation = table.get()
-//                table.getReservations().remove(table.getReservations().get(oldReservation));
-//                System.out.println(table.getReservations().stream().findFirst().get().getId());
-//                System.out.println(oldReservation + "Найдено!");
+    public int closeReservationTable(User user, int oldReservation) {
+        for (Reservation reservation : user.getReservations()) {
+            if (reservation.getId() == oldReservation) {
+                user.getReservations().remove(reservation);
                 return oldReservation;
-            //}
+            }
         }
         throw new RuntimeException("Ошибка отмены бронирования столика. Повторите попытку позже.");
     }

@@ -10,6 +10,6 @@ public interface ViewObserver {
 
     void onChangeReservationTable(User user, int oldReservation, Date reservationDate, int tableNo, String name);
 
-    void onCloseReservationTable(int oldReservation);
+    void onCloseReservationTable(User user, int oldReservation);
 
 }

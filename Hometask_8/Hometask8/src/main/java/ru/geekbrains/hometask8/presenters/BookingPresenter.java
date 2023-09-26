@@ -65,7 +65,7 @@ public class BookingPresenter implements ViewObserver {
         try {
             int reservationNo = model.reservationTable(user, reservationDate, tableNo, name);
             updateUIShowReservationTableResult(reservationNo);
-            onCloseReservationTable(oldReservation);
+            onCloseReservationTable(user, oldReservation);
         }
         catch (RuntimeException e) {
             updateUIShowReservationTableResult(-1);
@@ -77,12 +77,12 @@ public class BookingPresenter implements ViewObserver {
      * @param oldReservation id бронирования, который нужно отменить
      */
     @Override
-    public void onCloseReservationTable(int oldReservation) {
+    public void onCloseReservationTable(User user, int oldReservation) {
         try {
-            int closeResult = model.closeReservationTable(oldReservation);
+            int closeResult = model.closeReservationTable(user, oldReservation);
             updateUIShowReservationTableResult(closeResult);
         }
-        catch (RuntimeException e){
+        catch (RuntimeException e) {
             updateUIShowReservationTableResult(-1);
         }
     }
