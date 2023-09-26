@@ -8,7 +8,6 @@ public class Reservation {
     private final int id;
 
     private Table table;
-
     private Date date;
     private String name;
 

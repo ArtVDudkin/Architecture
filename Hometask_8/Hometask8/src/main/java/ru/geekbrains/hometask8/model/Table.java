@@ -9,23 +9,23 @@ public class Table {
     private final Collection<Reservation> reservations = new ArrayList<>();
 
     private static int counter;
-    private final int no;
+    private final int tableNo;
 
     {
-        no = ++counter;
+        tableNo = ++counter;
     }
 
     public Collection<Reservation> getReservations() {
         return reservations;
     }
 
-    public int getNo() {
-        return no;
+    public int getTableNo() {
+        return tableNo;
     }
 
     @Override
     public String toString() {
-        return String.format(Locale.getDefault(), "Столик #%d", no);
+        return String.format(Locale.getDefault(), "Столик #%d", tableNo);
     }
 
 }

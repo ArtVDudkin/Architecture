@@ -11,4 +11,6 @@ public interface Model {
 
     int reservationTable(Date reservationDate, int tableNo, String name);
 
+    int closeReservationTable(int oldReservation);
+
 }

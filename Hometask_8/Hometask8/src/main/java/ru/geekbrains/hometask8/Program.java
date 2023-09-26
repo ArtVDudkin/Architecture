@@ -7,20 +7,109 @@ import ru.geekbrains.hometask8.presenters.View;
 import ru.geekbrains.hometask8.views.BookingView;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Program {
 
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
         View view = new BookingView();
         Model model = new TableModel();
         BookingPresenter presenter = new BookingPresenter(model, view);
 
+
         presenter.updateUIShowTables();
 
-        view.reservationTable(new Date(), 2, "Станислав");
+        boolean flag = true;
+        while (flag) {
+            System.out.println("*** Добро пожаловать в Ресторан 'Осень!' ***");
+            System.out.println("=======================");
+            System.out.println("1. Посмотреть свободные столики");
+            System.out.println("2. Забронировать столик");
+            System.out.println("3. Посмотреть мои бронирования");
+            System.out.println("4. Отменить бронь столика");
+            System.out.println("5. Изменить бронь столика");
+            System.out.println("0. ЗАВЕРШЕНИЕ РАБОТЫ ПРИЛОЖЕНИЯ");
+            System.out.print("Пожалуйста, выберите пункт меню: ");
+            if (scanner.hasNextInt()) {
+                int answer = scanner.nextInt();
+                scanner.nextLine();
+                try {
+                    switch (answer) {
+                        // ЗАВЕРШЕНИЕ РАБОТЫ ПРИЛОЖЕНИЯ
+                        case 0:
+                            System.out.println("Завершение работы приложения");
+                            flag = false;
+                            break;
 
-        //view.changeReservationTable(1001, new Date, 3, "Станислав");
+                        // Посмотреть свободные столики
+                        case 1:
+                            presenter.updateUIShowTables();
+                            break;
+
+                        // Забронировать столик
+                        case 2:
+                            System.out.print("Укажите Ваше имя: ");
+                            String name = scanner.nextLine();
+                            System.out.print("Укажите номер столика, который Вы хотите забронировать: ");
+                            if (scanner.hasNextInt()) {
+                                int tableNo = scanner.nextInt();
+                                scanner.nextLine();
+                                view.reservationTable(new Date(), tableNo, name);
+                            } else {
+                                System.out.println("Номер столика указан некорректно.");
+                            }
+                            break;
+
+                        // Посмотреть мои бронирования
+                        case 3:
+                            //view.showTables();
+                            break;
+
+                        // Отменить бронь столика
+                        case 4:
+                            System.out.print("Укажите id Вашего бронирования столика, которое Вы хотите отменить: ");
+                            if (scanner.hasNextInt()) {
+                                int bookingId = scanner.nextInt();
+                                scanner.nextLine();
+                                view.closeReservationTable(bookingId);
+                            } else {
+                                System.out.println("Номер id бронирования указан некорректно.");
+                            }
+                            break;
+
+                        // Изменить бронь столика
+                        case 5:
+                            System.out.print("Укажите id Вашего бронирования столика, которое Вы хотите изменить: ");
+                            if (scanner.hasNextInt()) {
+                                int bookingId = scanner.nextInt();
+                                scanner.nextLine();
+                                System.out.print("Укажите Ваше имя: ");
+                                name = scanner.nextLine();
+                                System.out.print("Укажите номер столика, который Вы хотите забронировать: ");
+                                if (scanner.hasNextInt()) {
+                                    int tableNo = scanner.nextInt();
+                                    scanner.nextLine();
+                                    view.changeReservationTable(bookingId, new Date(), tableNo, name);
+                                } else {
+                                    System.out.println("Номер столика указан некорректно.");
+                                }
+                            } else {
+                                System.out.println("Номер id бронирования указан некорректно.");
+                            }
+                            break;
+                        default:
+                            System.out.println("Укажите корректный пункт меню.");
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            } else {
+                System.out.println("Укажите корректный пункт меню.");
+                scanner.nextLine();
+            }
+        }
 
     }
 

@@ -15,7 +15,7 @@ public class BookingView implements View {
         this.observer = observer;
     }
 
-    public void showTables(Collection<Table> tables){
+    public void showTables(Collection<Table> tables) {
         for (Table table: tables) {
             System.out.println(table);
         }
@@ -37,7 +37,7 @@ public class BookingView implements View {
      * @param tableNo номер столика
      * @param name Имя
      */
-    public void reservationTable(Date orderDate, int tableNo, String name){
+    public void reservationTable(Date orderDate, int tableNo, String name) {
         if (observer != null)
             observer.onReservationTable(orderDate, tableNo, name);
     }
@@ -50,8 +50,16 @@ public class BookingView implements View {
      * @param tableNo номер столика
      * @param name Имя
      */
-    public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name){
+    public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
+        if (observer != null) {
+            observer.onChangeReservationTable(oldReservation, reservationDate, tableNo, name);
+        }
+    }
 
+    public void closeReservationTable(int oldReservation) {
+        if (observer != null) {
+            observer.onCloseReservationTable(oldReservation);
+        }
     }
 
 }
