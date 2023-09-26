@@ -1,6 +1,7 @@
 package ru.geekbrains.hometask8;
 
 import ru.geekbrains.hometask8.model.TableModel;
+import ru.geekbrains.hometask8.model.User;
 import ru.geekbrains.hometask8.presenters.BookingPresenter;
 import ru.geekbrains.hometask8.presenters.Model;
 import ru.geekbrains.hometask8.presenters.View;
@@ -18,12 +19,17 @@ public class Program {
         Model model = new TableModel();
         BookingPresenter presenter = new BookingPresenter(model, view);
 
+        System.out.println("*** Добро пожаловать в Ресторан 'Осень!' ***");
+        System.out.println("=======================");
+        System.out.print("Укажите Ваше имя: ");
+        String name = scanner.nextLine();
+        User user = new User(name);
 
         presenter.updateUIShowTables();
 
         boolean flag = true;
         while (flag) {
-            System.out.println("*** Добро пожаловать в Ресторан 'Осень!' ***");
+            System.out.println("*** МЕНЮ ПРИЛОЖЕНИЯ ***");
             System.out.println("=======================");
             System.out.println("1. Посмотреть свободные столики");
             System.out.println("2. Забронировать столик");
@@ -50,13 +56,11 @@ public class Program {
 
                         // Забронировать столик
                         case 2:
-                            System.out.print("Укажите Ваше имя: ");
-                            String name = scanner.nextLine();
                             System.out.print("Укажите номер столика, который Вы хотите забронировать: ");
                             if (scanner.hasNextInt()) {
                                 int tableNo = scanner.nextInt();
                                 scanner.nextLine();
-                                view.reservationTable(new Date(), tableNo, name);
+                                view.reservationTable(user, new Date(), tableNo, name);
                             } else {
                                 System.out.println("Номер столика указан некорректно.");
                             }
@@ -64,7 +68,7 @@ public class Program {
 
                         // Посмотреть мои бронирования
                         case 3:
-                            //view.showTables();
+                            view.showUserReservations(user);
                             break;
 
                         // Отменить бронь столика
@@ -73,7 +77,7 @@ public class Program {
                             if (scanner.hasNextInt()) {
                                 int bookingId = scanner.nextInt();
                                 scanner.nextLine();
-                                view.closeReservationTable(bookingId);
+                                view.closeReservationTable(user, bookingId);
                             } else {
                                 System.out.println("Номер id бронирования указан некорректно.");
                             }
@@ -91,7 +95,7 @@ public class Program {
                                 if (scanner.hasNextInt()) {
                                     int tableNo = scanner.nextInt();
                                     scanner.nextLine();
-                                    view.changeReservationTable(bookingId, new Date(), tableNo, name);
+                                    view.changeReservationTable(user, bookingId, new Date(), tableNo, name);
                                 } else {
                                     System.out.println("Номер столика указан некорректно.");
                                 }

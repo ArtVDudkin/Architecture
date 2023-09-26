@@ -16,7 +16,7 @@ public class TableModel implements Model {
      */
     public Collection<Table> loadTables() {
 
-        if (tables == null){
+        if (tables == null) {
             tables = new ArrayList<>();
 
             tables.add(new Table());
@@ -33,14 +33,15 @@ public class TableModel implements Model {
      * Бронирование столика
      * @param reservationDate Дата бронирования
      * @param tableNo Номер столика
-     * @param name Имя
+     * @param name Имя клиента
      */
     @Override
-    public int reservationTable(Date reservationDate, int tableNo, String name) {
+    public int reservationTable(User user, Date reservationDate, int tableNo, String name) {
         for (Table table: tables) {
             if (table.getTableNo() == tableNo){
                 Reservation reservation = new Reservation(table, reservationDate, name);
                 table.getReservations().add(reservation);
+                user.getReservations().add(reservation);
                 return reservation.getId();
             }
         }
@@ -54,14 +55,15 @@ public class TableModel implements Model {
      */
     @Override
     public int closeReservationTable(int oldReservation) {
-       //List<Reservation> reservation = (ArrayList<Reservation>) tables.getReservations();
         for (Table table : tables) {
-            if (table.getReservations().stream().findFirst().get().getId() == oldReservation) {
+            //System.out.println(table.getReservations().stream().findFirst().get().getId());
+            //if (table.getReservations().stream().findFirst().get().getId() == oldReservation) {
 //                Reservation reservation = table.get()
 //                table.getReservations().remove(table.getReservations().get(oldReservation));
-                System.out.println(oldReservation + "Найдено!");
+//                System.out.println(table.getReservations().stream().findFirst().get().getId());
+//                System.out.println(oldReservation + "Найдено!");
                 return oldReservation;
-            }
+            //}
         }
         throw new RuntimeException("Ошибка отмены бронирования столика. Повторите попытку позже.");
     }

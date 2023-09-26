@@ -1,6 +1,7 @@
 package ru.geekbrains.hometask8.presenters;
 
 import ru.geekbrains.hometask8.model.Table;
+import ru.geekbrains.hometask8.model.User;
 
 import java.util.Collection;
 import java.util.Date;
@@ -41,9 +42,9 @@ public class BookingPresenter implements ViewObserver {
      * @param name имя клиента
      */
     @Override
-    public void onReservationTable(Date orderDate, int tableNo, String name) {
+    public void onReservationTable(User user, Date orderDate, int tableNo, String name) {
         try {
-            int reservationNo = model.reservationTable(orderDate, tableNo, name);
+            int reservationNo = model.reservationTable(user, orderDate, tableNo, name);
             updateUIShowReservationTableResult(reservationNo);
 
         }
@@ -52,24 +53,34 @@ public class BookingPresenter implements ViewObserver {
         }
     }
 
+    /**
+     * Произошло событие, пользователь передумал бронировать столик
+     * @param oldReservation старый id бронирования
+     * @param reservationDate новая дата резерва
+     * @param tableNo новый номер столика
+     * @param name новое имя имя клиента
+     */
     @Override
-    public void onChangeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
+    public void onChangeReservationTable(User user, int oldReservation, Date reservationDate, int tableNo, String name) {
         try {
-            int reservationNo = model.reservationTable(reservationDate, tableNo, name);
+            int reservationNo = model.reservationTable(user, reservationDate, tableNo, name);
             updateUIShowReservationTableResult(reservationNo);
-
+            onCloseReservationTable(oldReservation);
         }
-        catch (RuntimeException e){
+        catch (RuntimeException e) {
             updateUIShowReservationTableResult(-1);
         }
     }
 
+    /**
+     * Произошло событие, пользователь решил отменить бронирование столика
+     * @param oldReservation id бронирования, который нужно отменить
+     */
     @Override
     public void onCloseReservationTable(int oldReservation) {
         try {
             int closeResult = model.closeReservationTable(oldReservation);
             updateUIShowReservationTableResult(closeResult);
-
         }
         catch (RuntimeException e){
             updateUIShowReservationTableResult(-1);

@@ -1,6 +1,7 @@
 package ru.geekbrains.hometask8.model;
 
 import java.util.Date;
+import java.util.Locale;
 
 public class Reservation {
 
@@ -25,4 +26,8 @@ public class Reservation {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return String.format(Locale.getDefault(), "Бронирование #%d", id);
+    }
 }

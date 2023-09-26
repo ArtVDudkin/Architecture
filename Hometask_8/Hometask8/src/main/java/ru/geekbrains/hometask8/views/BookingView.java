@@ -1,6 +1,8 @@
 package ru.geekbrains.hometask8.views;
 
+import ru.geekbrains.hometask8.model.Reservation;
 import ru.geekbrains.hometask8.model.Table;
+import ru.geekbrains.hometask8.model.User;
 import ru.geekbrains.hometask8.presenters.View;
 import ru.geekbrains.hometask8.presenters.ViewObserver;
 
@@ -21,9 +23,15 @@ public class BookingView implements View {
         }
     }
 
+    public void showUserReservations(User user) {
+        for (Reservation reservation : user.getReservations()) {
+            System.out.println(reservation);
+        }
+    }
+
     @Override
     public void showReservationTableResult(int reservationNo) {
-        if (reservationNo > 0){
+        if (reservationNo > 0) {
             System.out.printf("Столик успешно забронирован. Номер вашей брони: #%d\n", reservationNo);
         }
         else {
@@ -37,9 +45,9 @@ public class BookingView implements View {
      * @param tableNo номер столика
      * @param name Имя
      */
-    public void reservationTable(Date orderDate, int tableNo, String name) {
+    public void reservationTable(User user, Date orderDate, int tableNo, String name) {
         if (observer != null)
-            observer.onReservationTable(orderDate, tableNo, name);
+            observer.onReservationTable(user, orderDate, tableNo, name);
     }
 
     /**
@@ -50,13 +58,17 @@ public class BookingView implements View {
      * @param tableNo номер столика
      * @param name Имя
      */
-    public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
+    public void changeReservationTable(User user, int oldReservation, Date reservationDate, int tableNo, String name) {
         if (observer != null) {
-            observer.onChangeReservationTable(oldReservation, reservationDate, tableNo, name);
+            observer.onChangeReservationTable(user, oldReservation, reservationDate, tableNo, name);
         }
     }
 
-    public void closeReservationTable(int oldReservation) {
+    /**
+     * Действие клиента (пользователь нажал на кнопку удаления бронирования столика)
+     * @param oldReservation
+     */
+    public void closeReservationTable(User user, int oldReservation) {
         if (observer != null) {
             observer.onCloseReservationTable(oldReservation);
         }
