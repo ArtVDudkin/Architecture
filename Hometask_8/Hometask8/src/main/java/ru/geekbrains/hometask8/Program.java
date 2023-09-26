@@ -89,8 +89,6 @@ public class Program {
                             if (scanner.hasNextInt()) {
                                 int bookingId = scanner.nextInt();
                                 scanner.nextLine();
-                                System.out.print("Укажите Ваше имя: ");
-                                name = scanner.nextLine();
                                 System.out.print("Укажите номер столика, который Вы хотите забронировать: ");
                                 if (scanner.hasNextInt()) {
                                     int tableNo = scanner.nextInt();
