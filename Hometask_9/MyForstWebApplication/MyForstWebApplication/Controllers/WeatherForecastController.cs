@@ -27,15 +27,27 @@ namespace MyForstWebApplication.Controllers
         [HttpPut("update")]
         public IActionResult Update([FromQuery] DateTime date, [FromQuery] int temperatureC)
         {
-            _weatherForecastHolder.Update(date, temperatureC);
-            return Ok();
+            if(_weatherForecastHolder.Update(date, temperatureC))
+            {
+                return Ok();
+            } else
+            {
+                return NotFound();
+            }
+                
         }
 
         [HttpDelete("delete")]
         public IActionResult Delete([FromQuery] DateTime date)
         {
-            _weatherForecastHolder.Delete(date);
-            return Ok();
+            if(_weatherForecastHolder.Delete(date)) 
+            {
+                return Ok();
+            } else
+            {
+                return NotFound();
+            }
+            
         }
 
         [HttpGet("get")]
