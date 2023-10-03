@@ -23,7 +23,7 @@ namespace ClinicService.Controllers
             {
                 ClientId = createRequest.ClientId,
                 Name = createRequest.Name,
-                Birthday = createRequest.Birthday,
+                Birthday = createRequest.Birthday
             });
             return Ok(res);
         }
