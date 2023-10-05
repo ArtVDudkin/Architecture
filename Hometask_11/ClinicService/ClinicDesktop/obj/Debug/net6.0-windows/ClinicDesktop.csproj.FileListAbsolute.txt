@@ -1,0 +1,17 @@
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.exe
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.deps.json
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.runtimeconfig.json
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.dll
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.pdb
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.csproj.AssemblyReference.cache
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.Form1.resources
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.csproj.GenerateResource.cache
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.GeneratedMSBuildEditorConfig.editorconfig
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.AssemblyInfoInputs.cache
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.AssemblyInfo.cs
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.csproj.CoreCompileInputs.cache
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.dll
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\refint\ClinicDesktop.dll
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.pdb
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.genruntimeconfig.cache
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ref\ClinicDesktop.dll
