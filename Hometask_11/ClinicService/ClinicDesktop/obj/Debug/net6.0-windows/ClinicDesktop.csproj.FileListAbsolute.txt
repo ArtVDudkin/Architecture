@@ -15,3 +15,7 @@ E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj
 E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.pdb
 E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.genruntimeconfig.cache
 E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ref\ClinicDesktop.dll
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.Data.dll
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\bin\Debug\net6.0-windows\ClinicDesktop.Data.pdb
+E:\GB_repo\Архитектура_v2\Hometask_11\ClinicService\ClinicDesktop\obj\Debug\net6.0-windows\ClinicDesktop.csproj.CopyComplete
