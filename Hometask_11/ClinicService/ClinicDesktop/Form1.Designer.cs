@@ -28,45 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListView listViewClients;
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.listViewClients = new System.Windows.Forms.ListView();
             this.columnHeaderId = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderSurname = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderFirstname = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderPatronymic = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderBirthday = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderDocument = new System.Windows.Forms.ColumnHeader();
-            listViewClients = new System.Windows.Forms.ListView();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listViewClients
             // 
-            listViewClients.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewClients.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderId,
             this.columnHeaderSurname,
             this.columnHeaderFirstname,
             this.columnHeaderPatronymic,
             this.columnHeaderBirthday,
             this.columnHeaderDocument});
-            listViewClients.FullRowSelect = true;
-            listViewClients.GridLines = true;
-            listViewClients.Location = new System.Drawing.Point(12, 12);
-            listViewClients.MultiSelect = false;
-            listViewClients.Name = "listViewClients";
-            listViewClients.Size = new System.Drawing.Size(757, 398);
-            listViewClients.TabIndex = 0;
-            listViewClients.UseCompatibleStateImageBehavior = false;
-            listViewClients.View = System.Windows.Forms.View.Details;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(775, 12);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Обновить";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.listViewClients.FullRowSelect = true;
+            this.listViewClients.GridLines = true;
+            this.listViewClients.Location = new System.Drawing.Point(12, 12);
+            this.listViewClients.MultiSelect = false;
+            this.listViewClients.Name = "listViewClients";
+            this.listViewClients.Size = new System.Drawing.Size(757, 398);
+            this.listViewClients.TabIndex = 0;
+            this.listViewClients.UseCompatibleStateImageBehavior = false;
+            this.listViewClients.View = System.Windows.Forms.View.Details;
             // 
             // columnHeaderId
             // 
@@ -103,13 +92,23 @@
             this.columnHeaderDocument.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeaderDocument.Width = 80;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(775, 12);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Обновить";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 450);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(listViewClients);
+            this.Controls.Add(this.listViewClients);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The best clinic";

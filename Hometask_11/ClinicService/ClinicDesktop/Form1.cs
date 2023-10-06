@@ -13,11 +13,9 @@ namespace ClinicDesktop
         {
             ClinicClient clinicClient = new ClinicClient("http://localhost:5280/", new HttpClient());
             ICollection<Client> clients = clinicClient.ClientGetAllAsync().Result;
-           
-            listViewClients.Items.Clear(); 
-           
-           
-            foreach(Client client in clients)
+            listViewClients.Items.Clear();
+
+            foreach (Client client in clients)
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = client.ClientId.ToString();
@@ -41,6 +39,7 @@ namespace ClinicDesktop
                 {
                     Text = client.Document
                 });
+                listViewClients.Items.Add(item);
             }
         }
     }
