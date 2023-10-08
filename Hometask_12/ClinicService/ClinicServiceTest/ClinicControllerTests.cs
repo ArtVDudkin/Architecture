@@ -1,5 +1,6 @@
 using ClinicService.Controllers;
 using ClinicService.Models;
+using ClinicService.Models.Requests;
 using ClinicService.Services;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -31,11 +32,47 @@ namespace ClinicServiceTests
             // [2] Исполнение тестируемого метода
             var operationResult = _clientController.GetAll();
 
-            // [3] Подготовка эталонного результата и его сравнение
+            // [3] Подготовка эталонного результата и его сравнение c полученным:
+            // - вернулся результат Ок,
+            // - в качестве параметра вернулся список клиентов,
+            // - в репозитории вызывался хотя бы раз метод GetAll
             Assert.IsType<OkObjectResult>(operationResult.Result);
             Assert.IsAssignableFrom<List<Client>>(((OkObjectResult)operationResult.Result).Value);
 
             _mockClientRepository.Verify(repository => repository.GetAll(), Times.AtLeastOnce);
+        }
+
+        public static readonly object[][] CorrectCreateClientDate =
+        {
+            new object[] { new DateTime(1990, 10, 20), "1111 123456", "Иванов", "Иван", "Иванович"},
+            new object[] { new DateTime(1991, 11, 21), "2222 123456", "Петров", "Петр", "Петрович"},
+            new object[] { new DateTime(1992, 12, 22), "3333 123456", "Сергеев", "Сергей", "Сергеевич"}
+        };
+
+        [Theory]
+        [MemberData(nameof(CorrectCreateClientDate))]
+        public void CreateClientTest(DateTime birthday, string document, string surName, string firstName, string patronymic)
+        {
+            // [1.1] Подготовка данных
+            _mockClientRepository.Setup(repository => repository.Create(It.IsNotNull<Client>())).Returns(1).Verifiable();
+
+            // [2] Исполнение тестируемого метода
+            var operationResult = _clientController.Create(new CreateClientRequest
+            {
+                Birthday = birthday,
+                Document = document,
+                SurName = surName,
+                FirstName = firstName,
+                Patronymic = patronymic
+            });
+
+            // [3] Подготовка эталонного результата и его сравнение c полученным:
+            // - вернулся результат Ок,
+            // - в качестве параметра вернулся список клиентов,
+            // - в репозитории вызывался хотя бы раз метод GetAll
+            Assert.IsType<OkObjectResult>(operationResult.Result);
+            Assert.IsAssignableFrom<int>(((OkObjectResult)operationResult.Result).Value);
+            _mockClientRepository.Verify(repository => repository.Create(It.IsNotNull<Client>()), Times.AtLeastOnce);
         }
 
     }
