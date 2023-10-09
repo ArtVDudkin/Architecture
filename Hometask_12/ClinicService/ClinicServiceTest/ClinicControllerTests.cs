@@ -18,6 +18,7 @@ namespace ClinicServiceTests
             _clientController = new ClientController(_mockClientRepository.Object);
         }
 
+        [Fact]
         public void GetAllClientsTest()
         {
             // [1.1] Подготовка данных
@@ -40,6 +41,33 @@ namespace ClinicServiceTests
             Assert.IsAssignableFrom<List<Client>>(((OkObjectResult)operationResult.Result).Value);
 
             _mockClientRepository.Verify(repository => repository.GetAll(), Times.AtLeastOnce);
+        }
+
+        [Fact]
+        public void GetClientByIdTest()
+        {
+            // [1.1] Подготовка данных
+
+            // [1.2] 
+            List<Client> clients = new List<Client>();
+            clients.Add(new Client());
+            clients.Add(new Client());
+            clients.Add(new Client());
+            int testId = 2;
+            _mockClientRepository.Setup(repository => repository.GetById(testId)).Returns(clients[testId]);
+
+            // [2] Исполнение тестируемого метода
+            var operationResult = _clientController.GetById(testId);
+
+            // [3] Подготовка эталонного результата и его сравнение c полученным:
+            // - вернулся результат Ок,
+            // - в качестве параметра вернулся клиент,
+            // - вернулся именно тот клиент, эквивалентный содержащемуся в списке под этим testId
+            // - в репозитории вызывался хотя бы раз метод GetById
+            Assert.IsType<OkObjectResult>(operationResult.Result);
+            Assert.IsAssignableFrom<Client>(((OkObjectResult)operationResult.Result).Value);
+            Assert.Equal(clients[testId], ((OkObjectResult)operationResult.Result).Value);
+            _mockClientRepository.Verify(repository => repository.GetById(testId), Times.AtLeastOnce);
         }
 
         public static readonly object[][] CorrectCreateClientDate =
